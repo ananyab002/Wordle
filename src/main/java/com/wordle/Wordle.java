@@ -58,6 +58,12 @@ public class Wordle {
       System.out.printf("Attempt %d/%d: ", guesses + 1, maxGuesses);
 
       String input = scanner.nextLine();
+
+      if (input.equalsIgnoreCase("exit")) {
+        System.out.println("\nExiting game. Thanks for playing!");
+        return;
+      }
+
       Optional<String> validatedGuess = validateInput(input);
 
       if (validatedGuess.isEmpty()) {
@@ -119,7 +125,8 @@ public class Wordle {
 
     for (int i = 0; i < len; i++) {
 
-      if (guessHints[i] != null)  continue;
+      if (guessHints[i] != null)
+        continue;
 
       char currentGuessChar = guess.charAt(i);
       int mismatchedGuessCount = mismatchedCharMap.getOrDefault(currentGuessChar, 0);
@@ -143,6 +150,7 @@ public class Wordle {
     System.out.println(Color.YELLOW.getCode() + "  YELLOW: Correct letter in wrong position" + Color.GRAY.getCode());
     System.out.println("* Letters won't show yellow if you have more");
     System.out.println("  of them than in the answer word");
+    System.out.println("* Type 'exit' to end the game");
     System.out.println("=".repeat(50));
     System.out.println("\nLet's begin!");
     System.out.println("\nGuess the " + wordLength + " - letter word!");
