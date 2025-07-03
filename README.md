@@ -10,7 +10,7 @@ A Java implementation of the popular word-guessing game Wordle.
 - **YELLOW**: Correct letter in wrong position
 - **GRAY**: Letter not in the word
 - Letters won’t show yellow if you’ve guessed more instances than exist in the answer
-
+- Type exit to end the game
 ## Requirements
 
 - Java 21
